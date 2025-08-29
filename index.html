@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vidunena Media Universe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      @keyframes background-animate {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      body {
+        --glow-color-1: rgba(59, 130, 246, 0.7);
+        --glow-color-2: rgba(250, 204, 21, 0.7);
+        background-size: 200% 200%;
+        background-image: linear-gradient(120deg, hsl(0 0% 100%) 0%, hsl(220 13% 97%) 100%);
+        animation: background-animate 30s ease infinite;
+      }
+      .dark body {
+        --glow-color-1: rgba(253, 224, 71, 0.7);
+        --glow-color-2: rgba(59, 130, 246, 0.7);
+        background-image: linear-gradient(120deg, hsl(222 47% 11%) 0%, hsl(222 47% 14%) 100%);
+      }
+
+      .btn-glow {
+        transition: all 0.3s ease-in-out;
+      }
+      .btn-glow:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 15px 2px var(--glow-color-1), 0 0 5px 0px var(--glow-color-2);
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#3b82f6', // blue-500
+                dark: '#2563eb', // blue-600
+              },
+              secondary: {
+                DEFAULT: '#fde047', // yellow-300
+                dark: '#facc15', // yellow-400
+              },
+              'base-100': 'hsl(0 0% 100%)',
+              'base-200': 'hsl(220 13% 91%)',
+              'base-300': 'hsl(220 13% 85%)',
+              'base-content': 'hsl(215 28% 17%)',
+              'base-dark-100': 'hsl(222 47% 11%)',
+              'base-dark-200': 'hsl(222 47% 16%)',
+              'base-dark-300': 'hsl(222 47% 21%)',
+              'base-dark-content': 'hsl(210 40% 98%)',
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            animation: {
+              fadeIn: 'fadeIn 0.5s ease-out forwards',
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.8.0",
+    "express": "https://esm.sh/express@^5.1.0",
+    "cors": "https://esm.sh/cors@^2.8.5",
+    "bcryptjs": "https://esm.sh/bcryptjs@^3.0.2",
+    "dotenv": "https://esm.sh/dotenv@^17.2.1",
+    "multer": "https://esm.sh/multer@^2.0.2",
+    "jsonwebtoken": "https://esm.sh/jsonwebtoken@^9.0.2",
+    "mysql2/": "https://esm.sh/mysql2@^3.14.3/",
+    "fs": "https://esm.sh/fs@^0.0.1-security",
+    "path": "https://esm.sh/path@^0.12.7",
+    "process": "https://esm.sh/process@^0.11.10",
+    "url": "https://esm.sh/url@^0.11.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-base-100 dark:bg-base-dark-100 text-base-content dark:text-base-dark-content">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
